@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: orangedemo-wind-turbine-app-dev
+  annotations:
+    argocd/app-name: orangedemo-wind-turbine-app-dev
+    backstage.io/kubernetes-id: orangedemo-wind-turbine-app
+    backstage.io/kubernetes-namespace: orangedemo
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: WindTurbineInc/orangedemo-wind-turbine
+    janus-idp.io/tekton-enabled: 'true'
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://console-openshift-console.apps.wearedevs.rl97.p1.openshiftapps.com/dev-pipelines/ns/orangedemo/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.wearedevs.rl97.p1.openshiftapps.com/k8s/ns/orangedemo/deployments/orangedemo-wind-turbine-app
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.wearedevs.rl97.p1.openshiftapps.com/#https://github.com/WindTurbineInc/orangedemo-wind-turbine?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/utherp0"
